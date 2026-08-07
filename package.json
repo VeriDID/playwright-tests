@@ -1,0 +1,21 @@
+{
+  "name": "playwright-tests",
+  "version": "1.0.0",
+  "description": "DigiCred CrMS operator-UI walkthrough — Playwright E2E tests, stakeholder reports (Word + HTML) and a narrated MP4 video.",
+  "private": true,
+  "scripts": {
+    "test": "cd ui && npx playwright test --config playwright.walkthrough.config.ts",
+    "list": "cd ui && npx playwright test --config playwright.walkthrough.config.ts --list",
+    "walkthrough": "cd ui && ./run-walkthrough.sh",
+    "video": "cd ui/walkthrough && node make-demo-video.mjs",
+    "postinstall": "playwright install chromium"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.60.0",
+    "docx": "^8.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "~5.5.0"
+  }
+}
