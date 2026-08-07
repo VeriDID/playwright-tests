@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Secrets — never commit
+.env
+.env.*
+*.secret
+
+# Generated run artifacts (contain live data + large binaries)
+ui/walkthrough/_shots-*/
+ui/walkthrough/_artifacts-*/
+ui/walkthrough/_report-*/
+ui/walkthrough/_video-*/
+ui/walkthrough/_results-*.json
+
+# Generated deliverables
+ui/walkthrough/*.mp4
+ui/walkthrough/CrMS-Walkthrough-Report-*.html
+DigiCred-CrMS-Walkthrough-Report-*.docx
+*.docx
+
+# Playwright defaults
+playwright-report/
+test-results/
+
+# OS
+.DS_Store
