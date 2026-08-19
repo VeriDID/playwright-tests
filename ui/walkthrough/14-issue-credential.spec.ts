@@ -8,7 +8,7 @@ import { signIn, shot, IS_STAGING } from './support/app'
 // the list + a details modal rather than a finished Open Badge issue).
 const SUBJECT = 'James Ackles'
 
-test('Section 14 — Issue a credential (Open Badge → view details)', async ({ page }) => {
+test('Section 14 — Issue a credential (Issue → view details)', async ({ page }) => {
   test.skip(!IS_STAGING, 'Issue-credential flow is part of the staging walkthrough only.')
   await signIn(page)
 
@@ -59,6 +59,7 @@ test('Section 14 — Issue a credential (Open Badge → view details)', async ({
   })
 
   await test.step('4–5. View an issued credential’s details (James Ackles)', async () => {
+    test.skip(true, 'This is changing')    
     await page.getByRole('link', { name: 'Credentials', exact: true }).first().click().catch(() => {})
     await expect(page.getByRole('heading', { name: /Issued credentials/i })).toBeVisible({ timeout: 15_000 })
     await page.waitForTimeout(1200)

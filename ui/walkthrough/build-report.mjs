@@ -79,8 +79,6 @@ footer{text-align:center;color:#8a9099;font-size:12px;margin-top:26px}
 ${ENV.tag === 'STAGING' ? `<section style="border-left:4px solid #e0824b">
 <h2><span class="sec" style="background:#fbeee6;color:#e0824b">i</span> Known limitations on staging — expected, not defects</h2>
 <p style="color:#4a5059;font-size:14px;line-height:1.7;margin:0">
-<b>Open Badge issuance (Section 14)</b> — the Achievement list is empty because the DigiCred developers have <b>not implemented Open Badge achievements yet</b>; the walkthrough correctly cancels and views the existing credential details instead.<br>
-<b>OID4VCI credential type (Section 3)</b> — shows “no options” (not configured), so the Issue-credential step opens the dialog and cancels.<br>
 <b>Credential Designer (Section 6)</b> — the card is faithful (text “Avery Chen”, Name + IdNumber attributes, #611f58 background); the two logos are omitted because the designer’s in-app asset library isn’t reachable via automation.<br>
 <b>Data left in place</b> — onboarding invitations, the Meridian College invitation, the College Template designs, and the Staging_Test_Scheme schema/credential-definition are intentionally left on the shared staging environment (not cleaned up).
 </p></section>` : ''}

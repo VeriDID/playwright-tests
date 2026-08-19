@@ -61,7 +61,7 @@ test('Section 13 — Schemas (publish schema + credential definition + OCA)', as
     // first College Template is nth(1). Selecting it attaches the design so the
     // published cred-def's OCA bundle carries the branding.
     await d.getByRole('radio').nth(1).click()
-    await page.waitForTimeout(400)
+    await page.waitForTimeout(1000)
     await shot(page, '13', '11', 'cred-def-form')
     await d.getByRole('button', { name: /^Publish$/i }).click()
     await expect(page.getByText(new RegExp(TAG, 'i')).first()).toBeVisible({ timeout: 20_000 })

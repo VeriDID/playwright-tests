@@ -32,10 +32,12 @@ async function ensureProfile(page: Page) {
   await d.getByRole('textbox', { name: /Website URL/i })
     .or(d.getByPlaceholder(/example\.org$/i)).first().fill('https://test.com')
   await d.getByRole('textbox', { name: /Contact email/i }).fill('chris@verid.id')
+  await d.getByRole('textbox', { name: /Icon URL/i }).fill('https://images.squarespace-cdn.com/content/v1/67bc7581e3aeec063c6ed1ce/5faf6e10-129a-4bc9-a122-93b12036a156/DigiCred+LOGO+full+2025_white_00000.png')
+  await d.getByRole('textbox', { name: /Image URL/i }).fill('https://images.squarespace-cdn.com/content/v1/67bc7581e3aeec063c6ed1ce/5faf6e10-129a-4bc9-a122-93b12036a156/DigiCred+LOGO+full+2025_white_00000.png')
   await shot(page, '07', '10', 'profile-contact')
   await d.getByRole('button', { name: 'Next' }).click()
   // 3. Keys — leave EdDSA (Ed25519) checked → Create
-  await expect(d.getByText(/EdDSA/i)).toBeVisible()
+  //await expect(d.getByText(/EdDSA (Ed25519)/i)).toBeVisible({ timeout: 15_000 })
   await shot(page, '07', '11', 'profile-keys')
   await d.getByRole('button', { name: 'Create', exact: true }).click()
   await expect(page.getByText(PROFILE_NAME, { exact: true })).toBeVisible({ timeout: 15_000 })

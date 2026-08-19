@@ -10,10 +10,12 @@ test('Section 2 — Channels list (sort / filter / search / pagination)', async 
   await signIn(page)
   await page.goto('/dashboard/channels')
   await expect(page.getByRole('heading', { name: 'Channels' })).toBeVisible()
+  await page.waitForTimeout(500)
   await shot(page, '02', '0', 'channels')
 
   await test.step('3. Sort each column one by one', async () => {
     for (const [i, col] of ['STATE', 'TYPE', 'NAME', 'CREATED AT', 'UPDATED AT'].entries()) {
+      await page.waitForTimeout(400)
       await page.getByRole('columnheader', { name: new RegExp(col, 'i') }).click()
       await page.waitForTimeout(400)
       await shot(page, '02', `3.${i + 1}`, `sort-${col.toLowerCase().replace(/ /g, '-')}`)

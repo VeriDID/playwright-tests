@@ -11,7 +11,7 @@ const CHANNEL = process.env.WT_WF_CHANNEL ?? (IS_STAGING ? 'Avery Chen' : 'Finle
 const NOTE = 'This is for End to End Testing'
 
 test('Section 4 — Workflow instance + channel note', async ({ page }) => {
-  test.skip(IS_STAGING, 'Merged into Section 3 (Channels + Workflow) on staging per Crms1b.')
+  // test.skip(IS_STAGING, 'Merged into Section 3 (Channels + Workflow) on staging per Crms1b.')
   await signIn(page)
 
   if (IS_STAGING) {
