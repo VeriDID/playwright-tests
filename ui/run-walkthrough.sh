@@ -45,7 +45,7 @@ echo "▶ Walkthrough suite → $DEMO_URL  [$TAG]  (user: $DEMO_USER)"
 cd "$UI_DIR"
 export PLAYWRIGHT_JSON_OUTPUT_NAME="$UI_DIR/walkthrough/_results-${TAG}.json"
 # list output for humans + json for the report/slack builders (honest live counts).
-npx playwright test --config playwright.walkthrough.config.ts --reporter=list,json || true --ui
+npx playwright test --ui --config playwright.walkthrough.config.ts --reporter=list,json || true
 
 if [ "$MODE" = "--tests-only" ]; then
   echo "✔ Tests done (--tests-only)."; exit 0
