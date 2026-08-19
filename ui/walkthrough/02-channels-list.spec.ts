@@ -10,7 +10,7 @@ test('Section 2 — Channels list (sort / filter / search / pagination)', async 
   await signIn(page)
   await page.goto('/dashboard/channels')
   await expect(page.getByRole('heading', { name: 'Channels' })).toBeVisible()
-  await page.waitForTimeout(5000)
+  await page.waitForTimeout(20000)
   await shot(page, '02', '0', 'channels')
 
   await test.step('3. Sort each column one by one', async () => {
