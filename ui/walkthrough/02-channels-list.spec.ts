@@ -15,9 +15,9 @@ test('Section 2 — Channels list (sort / filter / search / pagination)', async 
 
   await test.step('3. Sort each column one by one', async () => {
     for (const [i, col] of ['STATE', 'TYPE', 'NAME', 'CREATED AT', 'UPDATED AT'].entries()) {
-      await page.waitForTimeout(800)
+      await page.waitForTimeout(1500)
       await page.getByRole('columnheader', { name: new RegExp(col, 'i') }).click()
-      await page.waitForTimeout(800)
+      await page.waitForTimeout(1500)
       await shot(page, '02', `3.${i + 1}`, `sort-${col.toLowerCase().replace(/ /g, '-')}`)
     }
   })
